@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ML Image Generator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .left-panel {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      border-right: 1px solid #ddd;
+    }
+    .right-panel {
+      width: 420px;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .slider-container {
+      margin-bottom: 12px;
+    }
+    .slider-value {
+      font-family: monospace;
+      display: inline-block;
+      width: 50px;
+      text-align: right;
+    }
+    .slider-label {
+      font-weight: bold;
+      display: inline-block;
+      width: 280px;
+    }
+    input[type="range"] {
+      width: 200px;
+    }
+    #image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 96px);
+      grid-template-rows: repeat(4, 96px);
+      gap: 10px;
+      justify-content: center;
+    }
+    #image-grid img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left-panel">
+    <h1>Control Panel</h1>
+    <h2>
+      <input type="checkbox" id="simplifiedToggle" />
+      Simplified Parameter Set
+    </h2>    
+    <div id="sliders"></div>
+    <p id="result"></p>
+  </div>
+
+  <div class="right-panel">
+    <h2>Generated Images</h2>
+    <div id="image-grid"></div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
